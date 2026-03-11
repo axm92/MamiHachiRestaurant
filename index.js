@@ -33,7 +33,7 @@ function switchTab(id, event)
 
 // gallery slider
 const track = document.getElementById('galleryTrack');
-const slides = track.querySelectorAll('.gallery-slide');
+const slides = track.querySelectorAll('gallery-slide');
 let current = 0;
 
 function goTo(index) 
