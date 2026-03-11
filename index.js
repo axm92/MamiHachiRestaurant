@@ -25,8 +25,8 @@ function closeMenu()
 // menu tabs
 function switchTab(id, event) 
 {
-  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('menu-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   event.target.classList.add('active');
 }
@@ -35,18 +35,6 @@ function switchTab(id, event)
 const track = document.getElementById('galleryTrack');
 const slides = track.querySelectorAll('gallery-slide');
 let current = 0;
-
-function getSlidesVisible() 
-{
-  if (window.innerWidth < 600) return 1;
-  if (window.innerWidth < 900) return 2;
-  return 3;
-}
-
-function totalGroups() 
-{
-  return slides.length - getSlidesVisible() + 1;
-}
 
 function goTo(index) 
 {
