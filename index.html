@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Mami Hachi | Japanese & Latin Cuisine</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+    <body>
+        <!-- This is the Nav bar -->
+        <nav id = "navbar"> 
+            <a href = "#home" class = "logo">Mami Hachi</a>
+            <ul class = "navLinks">
+                <li><a href = "#home">Home</a></li>
+                <li><a href = "#menu">Menu</a></li>
+                <li><a href = "#about">About</a></li>
+                <li><a href = "#contact">Contact</a></li>
+            </ul>
+            <button class = "hamburger" id = "hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <!--Mobile view/menu-->
+        <div class = "mobileMenu" id = "mobileMenu">
+            <a href = "#home" onclick="closeMenu()">Home</a>
+            <a href = "#menu" onclick="closeMenu()">Menu</a>
+            <a href = "#gallery" onclick="closeMenu()">Gallery</a>
+            <a href = "#about" onclick="closeMenu()">About</a>
+            <a href = "#contact" onclick="closeMenu()">Contact</a>
+        </div>
+
+        <!-- Hero -->
+        <section id = "home">
+            <div class = "hero-bg"></div>
+            <div class = "hero-content">
+                <p class = "hero-eyebrow">Est. 2026 : Midtown</p>
+                <h1 class = "hero-title">Mami<br><em> Hachi</em></h1>
+                <p class = "hero-sub">Where the flavors of Latin America meet Japan</p>
+                <a href = "#menu" class = "hero-cta">Explore our menu</a>
+            </div>
+        </section>
+
+        <!--Menu-->
+        <section id = "menu">
+            <p class = "section - label">Most Popular</p>
+            <h2 class = "section-title">Our Menu</h2>
+            <div class = "divider"></div>
+
+            <div class = "menu-tabs">
+                <button class = "menu-tab active" onclick = "switchTab('mains', event)">Mains</button>
+                <button class = "menu-tab" onclick = "switchTab('desserts', event)">Desserts</button>
+                <button class = "menu-tab" onclick = "switchTab('drinks', event)">Drinks</button>
+            </div>
+
+            <div id = "mains" class = "menu-panel active">
+                <div class = "menu-grid">
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Wagyu Patacon</h4><p>A5 wagyu steak on fried plantain buns, with pico de gallo, salad, spicy mayo and ajo</p></div><div class = "menu-price">$18</div></div>
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Chulleta Curry</h4><p>Fried Porkchop, white rice, Flavorful curry</p></div><div class = "menu-price">$12</div></div>
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Veggie Ramen</h4><p>Tofu, mushrooms, green onion, vegetable base, half egg</p></div><div class = "menu-price">$14</div></div>
+                </div>
+            </div>
+
+            <div id = "desserts" class = "menu-panel">
+                <div class = "menu-grid">
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Matcha Tres Leches</h4><p>Spongecake soaked in rich matcha</p></div><div class = "menu-price">$7</div></div>
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Dulce de leche Japanese Cheesecake</h4><p>Fluffy Japanese Cheescake with caramel</p></div><div class = "menu-price">$10</div></div>
+                </div>
+            </div>
+
+            <div id = "drinks" class = "menu-panel">
+                <div class = "menu-grid">
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Pina Ramune</h4></div><div class = "menu-price">$6</div></div>
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Iced Matcha</h4></div><div class = "menu-price">$8</div></div>
+                    <div class = "menu-item"><div class = "menu-item-info"><h4>Cafe con Leche</h4></div><div class = "menu-price">$5</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!--Gallery-->
+        <section id = "gallery">
+            <h2 class = "section-Title">Gallery</h2>
+            <div class = "divider"></div>
+
+            <div class = "gallery-slider-wrap">
+                <div class = "gallery-track" id = "galleryTrack">
+                    <div class = "gallery-slide"> <img src = "https://www.indulgewithmimi.com/wp-content/uploads/2025/07/japanese-tres-leches-with-matcha-powder-735x735.jpg" alt = "Matcha Tres Leches" loading = "lazy"></div>   
+                    <div class = "gallery-slide"> <img src = "https://www.fsrmagazine.com/wp-content/uploads/2023/07/blendingworlds.jpg" alt = "Interior" loading = "lazy"></div>  
+                    <div class = "gallery-slide"> <img src = "https://www.cookeatworld.com/wp-content/uploads/2025/02/Katsu-Curry-1.jpg" alt = "Curry" loading = "lazy"></div>  
+                    <div class = "gallery-slide"> <img src = "https://images.303magazine.com/uploads/2020/07/Toro_303Mag_ABonecutter-13.jpg" alt = "Outdoor Space" loading = "lazy"></div>  
+                    <div class = "gallery-slide"> <img src = "https://www.mycolombianrecipes.com/wp-content/uploads/2013/11/patacones-con-carne-desmachada.jpg" alt = "Patacones" loading = "lazy"></div>  
+                    <div class = "gallery-slide"> <img src = "https://yamashirohollywood.com/tokyo_admin/asset/uploads/465/cta/the-magic-of-yamashiro-hollywood--1--c--1-.jpg" alt = "Exterior" loading = "lazy"></div>  
+                </div>
+            </div>
+
+            <div class = "slider-controls">
+                <button class = "slider-button" id = "prevButton">&#8592;</button>
+                <button class = "slider-button" id = "nextButton">&#8594;</button>
+            </div>
+        </section>
+
+        <!-- About -->
+         <section id = "about">
+            <div class = "about-text">
+                <p class = "section-label">Our Story</p>
+                <div class = "divider"></div>
+
+                <p>Mami Hachi was made in 2026 from the increased love and appreciation of Japanese food and culture, along with the want to incorporate my own culture as well. </p>
+                <p>The name is a play on words, "mami", meaning mom, and "hachi" is the number 8. So mom ate, like she made really good food or actually just ate.</p>
+                <p>Each dish has a little mix of the tradtional Japanese foods and Latin flavors.</p>
+            </div>
+         </section>
+
+         <!--Contact-->
+         <section id = "contact">
+            <p class = "section-label">Find Us</p>
+            <h2 class = "section-title">Get in Touch</h2>
+            <div class = "divider"></div>
+
+            <div class = "contact-grid">
+                <div class = "map-wrap">
+                    <iframe
+                    src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48360.39175873475!2d-73.98392375000002!3d40.75048770000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25901a4127ca9%3A0xbecdcc9081d6cfdb!2sMidtown%20Manhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1773200721443!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class = "contact-info">
+                    <p>📍&nbsp;787 West 52nd Street, New York, NY 10019</p>
+                    <p>📞 &nbsp; (718) 987-4567</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder=""></textarea>
+                </div>
+                <button class="btn-submit" onclick="submitForm()">Send Message</button>
+            </div>
+         </section>
+
+         <!--footer-->
+         <footer>
+            <div class = "footer-grid">
+                <div class = "footer-brand">
+                    <a href = "#home" class = "logo">Mami Hachi</a>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">&#9678;</a>    
+                    </div>
+                </div>
+                
+                <div class = "footer-col">
+                    <h5>Hours</h5>
+                    <ul>
+                        <li class = "hours-item"><span>Mon-Thur</span><span>10am - 11pm</span></li>
+                        <li class = "hours-item"><span>Fri-Sun</span><span>12pm-12am</span></li>
+                    </ul>
+                </div>
+            </div>
+         </footer>
+            
+    </body>
+    
+</html>

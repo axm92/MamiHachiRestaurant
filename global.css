@@ -1,0 +1,21 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #f5f0e8;
+  --dark: #1a1208;
+  --ember: #ba1818;
+  --gold: #d4a843;
+  --olive: #4a5240;
+  --sand: #e8dcc8;
+  --charcoal: #2c2416;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
