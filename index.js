@@ -25,15 +25,15 @@ function closeMenu()
 // menu tabs
 function switchTab(id, event) 
 {
-  document.querySelectorAll('menu-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('menu-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   event.target.classList.add('active');
 }
 
 // gallery slider
 const track = document.getElementById('galleryTrack');
-const slides = track.querySelectorAll('gallery-slide');
+const slides = track.querySelectorAll('.gallery-slide');
 let current = 0;
 
 function goTo(index) 
@@ -45,7 +45,7 @@ function goTo(index)
          index = slides.length - 1;
 
     current = index;
-    const slideWidth = slides[0].offsetWidth + 24 //width + gap
+    const slideWidth = slides[0].offsetWidth;
     track.style.transform = 'translateX(-${current * slideWidth}px);
 }
 
