@@ -61,8 +61,8 @@ function goTo(index)
     track.style.transform = 'translateX(-${current * slideWidth}px);
 }
 
-document.getElementById('prevBtn').onclick = () => goTo(current - 1);
-document.getElementById('nextBtn').onclick = () => goTo(current + 1);
+document.getElementById('prevButton').onclick = () => goTo(current - 1);
+document.getElementById('nextButton').onclick = () => goTo(current + 1);
 
 window.addEventListener('resize', () => goTo(0));
 
