@@ -53,7 +53,7 @@ function goTo(index)
 
     current = index;
     const slideWidth = slides[0].offsetWidth;
-    track.style.transform = 'translateX(-${current * slideWidth}px)';
+    track.style.transform = `translateX(-${current * slideWidth}px)`;
 }
 
 document.getElementById('prevButton').onclick = () => goTo(current - 1);
@@ -141,12 +141,12 @@ function updateCartUI()
 
         <div class = "cart-item-right">
           <span class ="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
-          <button class = "cart-remove-btn" onclick = "removeFromCart('${item.name}'" title = "Remove">X</button>
+          <button class = "cart-remove-btn" onclick = "removeFromCart('${item.name}'">X</button>
         </div>
       </div>
     ).join('');
 
-    cartTotal.textContent = '$${getCartTotal().toFixed(2)}';
+    cartTotal.textContent = `$${getCartTotal().toFixed(2)}`;
   }
 }
 
@@ -170,7 +170,7 @@ function closeCart()
 function showCartToast(name)
 {
   const toast = document.getElementById('cartToast');
-  toast.textContent = '"${name}" added to cart';
+  toast.textContent = `"${name}" added to cart`;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2200);
 }
