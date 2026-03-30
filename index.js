@@ -141,7 +141,7 @@ function updateCartUI()
 
         <div class = "cart-item-right">
           <span class ="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
-          <button class = "cart-remove-btn" onclick = "removeFromCart('${item.name}'">X</button>
+          <button class = "cart-remove-btn" onclick = "removeFromCart('${item.name}')">X</button>
         </div>
       </div>
     `).join('');
