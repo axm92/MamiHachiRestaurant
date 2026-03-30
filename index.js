@@ -133,7 +133,7 @@ function updateCartUI()
     cartActions.style.display = 'flex';
 
     cartItems.innerHTML = cart.map(item =>
-      <div class = "cart-item">
+      `<div class = "cart-item">
         <div class = "cart-item-info">
           <span class = "cart-item-name">${item.name}</span>
           <span class = "cart-item-qty">x ${item.qty}</span>
@@ -144,7 +144,7 @@ function updateCartUI()
           <button class = "cart-remove-btn" onclick = "removeFromCart('${item.name}'">X</button>
         </div>
       </div>
-    ).join('');
+    `).join('');
 
     cartTotal.textContent = `$${getCartTotal().toFixed(2)}`;
   }
