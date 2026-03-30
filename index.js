@@ -151,7 +151,7 @@ function updateCartUI()
 
     document.querySelectorAll('.cart-remove-btn').forEach(btn => 
       {
-        btn.addEventListener('click', () => removeFromCart(btn.CDATA_SECTION_NODE.name));
+        btn.addEventListener('click', () => removeFromCart(btn.dataset.name));
       });
   }
 }
