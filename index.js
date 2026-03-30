@@ -125,7 +125,7 @@ function updateCartUI()
     cartEmpty.style.display = 'block';
     cartItems.style.display = 'none';
     cartActions.style.display = 'none';
-    cartTotal.textContent = '$0.00';
+    // cartTotal.textContent = '$0.00';
   }
   else
   {
