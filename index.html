@@ -8,6 +8,34 @@
     </head>
 
     <body>
+        <!-- Cart Overlay (clicking to close)-->
+         <div class = "cart-panel" id = "cartPanel">
+            <div class = "cart-header">
+                <h3>Your Order</h3>
+                <button class = "cart-close-btn" onclick = "closeCart()">X</button>
+            </div>
+            <div class = "cart-body">
+                <div class = "cart-empty" id = "cartEmpty">
+                    <div class = "cart-empty-icon">🛒</div>
+                    <p>Your cart is empty.<br>Add items from the menu.</p>
+                </div>
+                <div id = "cartItems"></div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span class="cart-total-label">Total</span>
+                    <span class="cart-total-amount" id="cartTotal">$0.00</span>
+                </div>
+                <div class="cart-actions" id="cartActions">
+                    <button class="btn-checkout">Proceed to Checkout</button>
+                    <button class="btn-clear-cart" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Toast -->
+        <div class = "cart-toast" id = "cartToast"></div>
+
         <!-- This is the Nav bar -->
         <nav id = "navbar"> 
             <a href = "#home" class = "logo">Mami Hachi</a>
@@ -17,6 +45,13 @@
                 <li><a href = "#about">About</a></li>
                 <li><a href = "#contact">Contact</a></li>
             </ul>
+
+            <!-- Cart icon + hamburger grouped together -->
+            <div class="nav-right">
+            <button class="cart-icon-btn" onclick="toggleCart()" aria-label="Open cart">
+                🛒
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
             <button class = "hamburger" id = "hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>

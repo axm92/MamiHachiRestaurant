@@ -68,6 +68,291 @@ nav
 
 .nav-links a:hover { color: var(--gold); }
 
+/*Addition for navbar on right*/
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/*Cart icon button*/
+.cart-icon-btn {
+  position: relative;
+  background: none;
+  border: 1px solid rgba(212, 168, 67, 0.35);
+  color: var(--cream);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition:all 0.3s;
+}
+.cart-icon-btn:hover { border-color: var(--gold); color: var(--gold);}
+
+.cart-badge {
+  display: none;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: var(--ember);
+  color: var(--cream);
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+/*Cart overlay*/
+.cart-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 18, 8, 0, 55);
+  z-index: 1100;
+  backdrop-filter: blur(2px);
+}
+.cart-overlay.open { display:block; }
+
+/* cart panel*/
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--charcoal);
+  color: var(--cream);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid rgba(212,168,67,0.15);
+}
+.cart-panel.open { transform: translateX(0); }
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.8rem;
+  border-bottom: 1px solid rgba(212,168,67,0.15);
+}
+.cart-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.cart-close-btn {
+  background: none;
+  border: none;
+  color: rgba(245,240,232,0.5);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.cart-close-btn:hover { color: var(--cream); }
+ 
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem 1.8rem;
+}
+ 
+.cart-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: rgba(245,240,232,0.35);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+.cart-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+ 
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(245,240,232,0.07);
+  gap: 0.8rem;
+}
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+.cart-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-item-qty {
+  font-size: 0.72rem;
+  color: rgba(245,240,232,0.45);
+  letter-spacing: 0.05em;
+}
+.cart-item-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+.cart-item-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--gold);
+}
+.cart-remove-btn {
+  background: none;
+  border: 1px solid rgba(186,24,24,0.3);
+  color: rgba(186,24,24,0.6);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  line-height: 1;
+}
+.cart-remove-btn:hover {
+  background: var(--ember);
+  border-color: var(--ember);
+  color: var(--cream);
+}
+ 
+/* ─── CART FOOTER ─── */
+.cart-footer {
+  padding: 1.5rem 1.8rem;
+  border-top: 1px solid rgba(212,168,67,0.15);
+}
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.2rem;
+}
+.cart-total-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+}
+.cart-total-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+ 
+.cart-actions {
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.btn-checkout {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--ember);
+  color: var(--cream);
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.btn-checkout:hover { background: var(--gold); color: var(--dark); }
+ 
+.btn-clear-cart {
+  width: 100%;
+  padding: 0.75rem;
+  background: none;
+  color: rgba(245,240,232,0.4);
+  border: 1px solid rgba(245,240,232,0.12);
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.btn-clear-cart:hover {
+  border-color: var(--ember);
+  color: var(--ember);
+}
+
+/* adding to cart button*/
+.add-to-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  padding: 0.35rem 0.8rem;
+  background: none;
+  border: 1px solid rgba(212,168,67,0.3);
+  color: rgba(212,168,67,0.7);
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+.add-to-cart-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+ 
+/* ─── TOAST NOTIFICATION ─── */
+.cart-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--olive);
+  color: var(--cream);
+  padding: 0.75rem 1.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  pointer-events: none;
+  border-left: 2px solid var(--gold);
+}
+.cart-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+
 /* ─── HAMBURGER ─── */
 .hamburger {
   display: none; 
